@@ -10,12 +10,17 @@
       ->cd appfoldername
       ->npm start
 
-Note:node modules will not be pushed in git hub , this is done by a file called git ignore .It will ignore the files mentioned in it. To install node modules we need to run npm  install ,it will check with things present in package.json and install the required.
+Note:	node modules will not be pushed in git hub , this is done by a file called git ignore .
+	It will ignore the files mentioned in it. To install node modules we need to run npm  install ,
+	it will check with things present in package.json and install the required.
 
 
 3)  Important definition's:
 
-  3.1)  The package.json file represents various metadata relevant to the project. Moreover, it helps npm identify the project’s information and dependencies, and it           typically resides at the root directory of a project.Therefore, a package.json's primary purpose is to hold and represent the various metadata and            configurations related to the project.
+  3.1)  The package.json file represents various metadata relevant to the project.
+  	Moreover, it helps npm identify the project’s information and dependencies, 
+	and ittypically resides at the root directory of a project.Therefore, 
+	a package.json's primary purpose is to hold and represent the various metadata and configurations related to the project.
 
 
   3.2)  Using npm init
