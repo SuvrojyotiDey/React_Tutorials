@@ -1,0 +1,13 @@
+{"inputData":[
+    {
+        "label": "User Name",
+        "inline": "Enter the User name",
+        "type":"text"
+    },
+    {
+        "label": "Password",
+        "inline": "Enter the Password",
+        "type":"password"
+    }
+]
+}
