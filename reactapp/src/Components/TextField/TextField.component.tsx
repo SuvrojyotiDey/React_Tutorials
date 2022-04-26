@@ -1,19 +1,17 @@
 import React from "react";
 
 const TextField = (props: any) => {
-    const { labelData, placeholderData,typeData,customStyles } = props;
-    // console.log(props);
+    const { labelData, placeholderData,typeData,labelStyles,textFieldCustomStyles } = props;
     return (
         <>
             <div>
-                <div>{labelData}</div>
+                <div className={labelStyles}>{labelData}</div>
                 <input
                     placeholder={placeholderData}
                     type={typeData}
-                    className={customStyles}
+                    className={textFieldCustomStyles}
                 />
             </div>
-
         </>
     );
 };

@@ -9,7 +9,7 @@ const LoginPage = () => {
         <>
             <div className={styles.mainContainer}>
                 <div className={styles.leftContainer}>
-                    <img src="" alt=""/>
+                    <img src="" alt="" />
                 </div>
                 <div className={styles.rightContainer}>
                     {
@@ -18,20 +18,17 @@ const LoginPage = () => {
                                 return (
                                     <TextField
                                         labelData={textFieldData.label}
+                                        labelStyles={styles.label}
                                         placeholderData={textFieldData.inline}
                                         typeData={textFieldData.type}
-                                        customStyles={styles.textField}
+                                        textFieldCustomStyles={styles.textField}
                                     />
                                 )
                             }
                         )
-
                     }
                 </div>
-
-
             </div>
-
         </>
     );
 };
