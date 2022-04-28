@@ -1,0 +1,8 @@
+{
+    "buttonData": [
+        {
+            "inline": "login",
+            "type": "submit"
+        }
+    ]
+}

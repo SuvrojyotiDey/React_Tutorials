@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Login.module.css";
 import TextField from "../../Components/TextField/TextField.component";
-import data from "./fieldData.json";
-
+import fieldData from "./fieldData.json";
+import buttonData from "./buttonData.json";
+import Button from "../../Components/Button/Button.Component";
 const LoginPage = () => {
-    console.log(data.inputData);
+
+    const handleSubmit = () => {
+
+    }
     return (
         <>
             <div className={styles.mainContainer}>
@@ -12,22 +16,38 @@ const LoginPage = () => {
                     <img src="" alt="" />
                 </div>
                 <div className={styles.rightContainer}>
-                    {
-                        data.inputData.map(
-                            (textFieldData: any) => {
+                    <form onSubmit={handleSubmit}>
+                        {
+                            fieldData.inputData.map(
+                                (textFieldData: any) => {
+                                    return (
+                                        <TextField
+                                            labelData={textFieldData.label}
+                                            labelStyles={styles.label}
+                                            placeholderData={textFieldData.inline}
+                                            typeData={textFieldData.type}
+                                            textFieldCustomStyles={styles.textField}
+
+                                        />
+                                    )
+                                }
+                            )
+                        }
+                        {
+                            buttonData.buttonData.map((buttonValue: any) => {
                                 return (
-                                    <TextField
-                                        labelData={textFieldData.label}
-                                        labelStyles={styles.label}
-                                        placeholderData={textFieldData.inline}
-                                        typeData={textFieldData.type}
-                                        textFieldCustomStyles={styles.textField}
+                                    <Button
+                                        labelData={buttonValue.inline}
+                                        typeData={buttonValue.type}
+                                        buttonCustomStyles={styles.buttonField}
                                     />
                                 )
-                            }
-                        )
-                    }
+                            })
+                        }
+                    </form>
+
                 </div>
+                <div></div>
             </div>
         </>
     );

@@ -21,3 +21,15 @@
     margin-bottom: 20px;
     color: #0c0c0c;
 }
+.buttonField{
+    width:100px;
+    height:40px;
+    font:18px;
+    color: #808080;
+    background: none;
+    outline:none;
+    border:1px solid #808080;
+    outline: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
