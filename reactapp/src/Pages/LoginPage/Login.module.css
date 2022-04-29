@@ -1,6 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+}
 .mainContainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.leftContainer{
     
 }
+.imageContainer{
+    display: flex;
+    justify-content: center;
+}
+.image{
+    height: 650px;
+    width: 850x;
+}
+.heading{
+    font-size: 32px;
+    color: #414141;
+    font-weight: 400;
+    margin-bottom: 60px;
+    width: 100%;
+    text-align: center;
+}
+.rightContainer{
+    height: 650px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .textField{
     width:300px;
     height:50px;
@@ -13,18 +50,18 @@
     margin-bottom: 20px;
 }
 .textField:focus-visible{
-    border:2px solid #fb4e0b
+    border:2px solid #414141;
 }
 .label{
     font-family:sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     margin-bottom: 20px;
-    color: #0c0c0c;
+    color:#414141;
 }
 .buttonField{
     width:100px;
     height:40px;
-    font:18px;
+    font-size:18px;
     color: #808080;
     background: none;
     outline:none;
@@ -32,4 +69,16 @@
     outline: none;
     cursor: pointer;
     border-radius: 4px;
+    margin-top: 20px;
+    margin-right:20px;
+}
+.buttonField:hover{
+    border:2px solid #414141;
+    color: #ffffff;
+    background-color: #414141;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: flex-start;
 }

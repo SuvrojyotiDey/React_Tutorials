@@ -1,10 +1,12 @@
 {"inputData":[
     {
+        "id":"loginPageUserName",
         "label": "User Name",
         "inline": "Enter the User name",
         "type":"text"
     },
     {
+        "id":"loginPagePassword",
         "label": "Password",
         "inline": "Enter the Password",
         "type":"password"
