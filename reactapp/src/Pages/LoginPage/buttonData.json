@@ -1,7 +1,13 @@
 {
     "buttonData": [
         {
-            "inline": "login",
+            "id": "loginPageSignIn",
+            "inline": "sign in",
+            "type": "submit"
+        },
+        {
+            "id": "loginPageSignUp",
+            "inline": "sign up",
             "type": "submit"
         }
     ]
