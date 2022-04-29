@@ -1,10 +1,7 @@
 import React from "react";
 
 const TextField = (props: any) => {
-    const { labelData, placeholderData, typeData, labelStyles, textFieldCustomStyles, fieldValue } = props;
-    const setValue = (data: any) => {
-        console.log(data)
-    }
+    const { labelData, placeholderData, typeData, labelStyles, textFieldCustomStyles, textFieldValue } = props;
     return (
         <>
             <div>
@@ -13,9 +10,10 @@ const TextField = (props: any) => {
                     placeholder={placeholderData}
                     type={typeData}
                     className={textFieldCustomStyles}
-                    onChange={(e: any) => {
-                        setValue(e.target.value)
-                    }
+                    onChange={
+                        (e: any) => {
+                            textFieldValue(e.target.value)
+                        }
                     }
                 />
             </div>
