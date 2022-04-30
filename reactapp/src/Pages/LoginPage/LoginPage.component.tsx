@@ -18,14 +18,18 @@ const LoginPage = () => {
         console.log(password);
     }
 
-    const fieldValueExtract = (data: any, dataType: any) => {
+    const fieldValueExtract = (data: any, dataType: any, identifier:any) => {
 
-        if (dataType === "text") {
+        if (dataType === "text" && identifier==="loginPageUserName") {
             setUserName(data);
         }
-        if (dataType === "password") {
+        if (dataType === "password" && identifier==="loginPagePassword") {
             setPassword(data);
         }
+    }
+
+    const buttonValueExtract=(data: any, identifier:any)=>{
+        console.log(data)
     }
 
     return (
@@ -50,7 +54,7 @@ const LoginPage = () => {
                                                     typeData={textFieldData.type}
                                                     textFieldCustomStyles={styles.textField}
                                                     textFieldValue={
-                                                        (value: any) => fieldValueExtract(value, textFieldData.type)
+                                                        (value: any) => fieldValueExtract(value, textFieldData.type,textFieldData.id)
                                                     }
                                                 />
                                             )
@@ -66,6 +70,9 @@ const LoginPage = () => {
                                                 labelData={buttonValue.inline}
                                                 typeData={buttonValue.type}
                                                 buttonCustomStyles={styles.buttonField}
+                                                buttonValue={
+                                                    (value: any) => buttonValueExtract(value,buttonValue.id)
+                                                }
                                             />
                                         )
                                     }
