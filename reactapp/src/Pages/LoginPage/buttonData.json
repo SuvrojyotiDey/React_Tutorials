@@ -8,7 +8,7 @@
         {
             "id": "loginPageSignUp",
             "inline": "sign up",
-            "type": "submit"
+            "type": "button"
         }
     ]
 }

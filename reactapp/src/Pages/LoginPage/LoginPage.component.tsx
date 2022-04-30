@@ -1,15 +1,24 @@
-import React, { FormEvent, useEffect, useRef, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import styles from "./Login.module.css";
 import TextField from "../../Components/TextField/TextField.component";
 import fieldData from "./fieldData.json";
 import buttonData from "./buttonData.json";
 import Button from "../../Components/Button/Button.Component";
 import loginBackground from "../../Assets/loginBackground.jpg";
+import { useNavigate } from "react-router-dom";
+import handlingNavigation from "../../Utils/handlingNavigation";
 
 const LoginPage = () => {
 
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+
+    useEffect(() => {
+        setErrorMessage('');
+    }, [userName, password])
+
+    const navigate = useNavigate();
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
 
@@ -18,18 +27,35 @@ const LoginPage = () => {
         console.log(password);
     }
 
-    const fieldValueExtract = (data: any, dataType: any, identifier:any) => {
+    const validationFields = (userNameData: any, passwordData: any) => {
+        const mockUserName = "suvro";
+        const mockPassword = "suvro";
+        if (userNameData === mockPassword && passwordData === mockPassword) {
+            handlingNavigation("/newPage", navigate);
+        }
+        else {
+            setErrorMessage("Wrong Username and Password");
+        }
 
-        if (dataType === "text" && identifier==="loginPageUserName") {
+    }
+
+    const fieldValueExtract = (data: any, dataType: any, identifier: any) => {
+
+        if (dataType === "text" && identifier === "loginPageUserName") {
             setUserName(data);
         }
-        if (dataType === "password" && identifier==="loginPagePassword") {
+        if (dataType === "password" && identifier === "loginPagePassword") {
             setPassword(data);
         }
     }
 
-    const buttonValueExtract=(data: any, identifier:any)=>{
-        console.log(data)
+    const buttonValueExtract = (typeData: any, identifier: any) => {
+        if (identifier === "loginPageSignIn" && typeData === "submit") {
+            validationFields(userName, password);
+        }
+        if (identifier === "loginPageSignUp") {
+            handlingNavigation("/signUp", navigate);
+        }
     }
 
     return (
@@ -48,13 +74,14 @@ const LoginPage = () => {
                                         (textFieldData: any) => {
                                             return (
                                                 <TextField
+                                                    key={textFieldData.id}
                                                     labelData={textFieldData.label}
                                                     labelStyles={styles.label}
                                                     placeholderData={textFieldData.inline}
                                                     typeData={textFieldData.type}
                                                     textFieldCustomStyles={styles.textField}
                                                     textFieldValue={
-                                                        (value: any) => fieldValueExtract(value, textFieldData.type,textFieldData.id)
+                                                        (value: any) => fieldValueExtract(value, textFieldData.type, textFieldData.id)
                                                     }
                                                 />
                                             )
@@ -62,16 +89,20 @@ const LoginPage = () => {
                                     )
                                 }
                             </div>
+
+                            <div className={styles.errorMessage}>{errorMessage}</div>
+
                             <div className={styles.buttonContainer}>
                                 {
                                     buttonData.buttonData.map((buttonValue: any) => {
                                         return (
                                             <Button
+                                                key={buttonValue.id}
                                                 labelData={buttonValue.inline}
                                                 typeData={buttonValue.type}
                                                 buttonCustomStyles={styles.buttonField}
                                                 buttonValue={
-                                                    (value: any) => buttonValueExtract(value,buttonValue.id)
+                                                    (value: any) => buttonValueExtract(buttonValue.type, buttonValue.id)
                                                 }
                                             />
                                         )
