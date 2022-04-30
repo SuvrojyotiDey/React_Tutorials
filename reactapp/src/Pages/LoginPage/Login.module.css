@@ -1,27 +1,30 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family:sans-serif;
+    font-family: sans-serif;
 }
-.mainContainer{
+
+.mainContainer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 100vw;
     height: 100vh;
 }
-.leftContainer{
-    
-}
-.imageContainer{
+
+.leftContainer {}
+
+.imageContainer {
     display: flex;
     justify-content: center;
 }
-.image{
+
+.image {
     height: 650px;
     width: 850x;
 }
-.heading{
+
+.heading {
     font-size: 32px;
     color: #414141;
     font-weight: 400;
@@ -29,7 +32,8 @@
     width: 100%;
     text-align: center;
 }
-.rightContainer{
+
+.rightContainer {
     height: 650px;
     width: 350px;
     display: flex;
@@ -38,47 +42,55 @@
     justify-content: center;
 }
 
-.textField{
-    width:300px;
-    height:50px;
+.textField {
+    width: 300px;
+    height: 50px;
     font-size: 18px;
-    font-family:sans-serif;
+    font-family: sans-serif;
     border: 1px solid #808080;
     border-radius: 5px;
     padding-left: 15px;
     outline: none;
     margin-bottom: 20px;
 }
-.textField:focus-visible{
-    border:2px solid #414141;
+
+.textField:focus-visible {
+    border: 2px solid #414141;
 }
-.label{
-    font-family:sans-serif;
+
+.label {
+    font-family: sans-serif;
     font-size: 22px;
     margin-bottom: 20px;
-    color:#414141;
+    color: #414141;
 }
-.buttonField{
-    width:100px;
-    height:40px;
-    font-size:18px;
+
+.errorMessage {
+    color: red;
+}
+
+.buttonField {
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
     color: #808080;
     background: none;
-    outline:none;
-    border:1px solid #808080;
+    outline: none;
+    border: 1px solid #808080;
     outline: none;
     cursor: pointer;
     border-radius: 4px;
     margin-top: 20px;
-    margin-right:20px;
+    margin-right: 20px;
 }
-.buttonField:hover{
-    border:2px solid #414141;
+
+.buttonField:hover {
+    border: 2px solid #414141;
     color: #ffffff;
     background-color: #414141;
 }
 
-.buttonContainer{
+.buttonContainer {
     display: flex;
     justify-content: flex-start;
 }
