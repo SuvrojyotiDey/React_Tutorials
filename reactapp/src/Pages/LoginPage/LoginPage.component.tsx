@@ -10,27 +10,29 @@ import handlingNavigation from "../../Utils/handlingNavigation";
 
 const LoginPage = () => {
 
-    const [userName, setUserName] = useState('');
-    const [password, setPassword] = useState('');
+    const [dataValue, setDataValue] = useState({
+        userName: "",
+        password: ""
+    });
     const [errorMessage, setErrorMessage] = useState('');
 
     useEffect(() => {
         setErrorMessage('');
-    }, [userName, password])
+    }, [dataValue.userName, dataValue.password])
 
     const navigate = useNavigate();
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
 
         event.preventDefault();
-        console.log(userName);
-        console.log(password);
+        console.log(dataValue.userName);
+        console.log(dataValue.password);
     }
 
     const validationFields = (userNameData: any, passwordData: any) => {
         const mockUserName = "suvro";
-        const mockPassword = "suvro";
-        if (userNameData === mockPassword && passwordData === mockPassword) {
+        const mockPassword = "suvro123";
+        if (userNameData === mockUserName && passwordData === mockPassword) {
             handlingNavigation("/newPage", navigate);
         }
         else {
@@ -41,17 +43,26 @@ const LoginPage = () => {
 
     const fieldValueExtract = (data: any, dataType: any, identifier: any) => {
 
-        if (dataType === "text" && identifier === "loginPageUserName") {
-            setUserName(data);
+        if (dataType === "userName" && identifier === "loginPageUserName") {
+            setDataValue({
+                ...dataValue,
+                userName: data               
+            }
+            );
         }
-        if (dataType === "password" && identifier === "loginPagePassword") {
-            setPassword(data);
+        if (dataType === "userPassword" && identifier === "loginPagePassword") {
+            setDataValue({
+                ...dataValue,
+                password: data
+            }
+            );
         }
+
     }
 
     const buttonValueExtract = (typeData: any, identifier: any) => {
         if (identifier === "loginPageSignIn" && typeData === "submit") {
-            validationFields(userName, password);
+            validationFields(dataValue.userName, dataValue.password);
         }
         if (identifier === "loginPageSignUp") {
             handlingNavigation("/signUp", navigate);
@@ -65,7 +76,7 @@ const LoginPage = () => {
                     <img src={loginBackground} className={styles.image} alt="" />
                 </div>
                 <div className={styles.rightContainer}>
-                    <div className={styles.heading}>Login Page</div>
+                    {/* <div className={styles.heading}>Login Page</div> */}
                     <div className={styles.formContainer}>
                         <form onSubmit={handleSubmit}>
                             <div className={styles.textContainer}>
@@ -81,8 +92,9 @@ const LoginPage = () => {
                                                     typeData={textFieldData.type}
                                                     textFieldCustomStyles={styles.textField}
                                                     textFieldValue={
-                                                        (value: any) => fieldValueExtract(value, textFieldData.type, textFieldData.id)
+                                                        (value: any) => fieldValueExtract(value, textFieldData.name, textFieldData.id)
                                                     }
+                                                    nameData={textFieldData.name}
                                                 />
                                             )
                                         }

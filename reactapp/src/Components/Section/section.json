@@ -1,0 +1,44 @@
+{
+    "section1": [
+        {
+            "questionId": "1",
+            "label": "First Name",
+            "inputType": "text",
+            "placeHolderData": "Enter the first name"
+        },
+        {
+            "questionId": "2",
+            "label": "Last Name",
+            "inputType": "text",
+            "placeHolderData": "Enter the last name"
+        }
+    ],
+    "section2": [
+        {
+            "questionId": "3",
+            "label": "Date of birth",
+            "inputType": "date",
+            "placeHolderData": "Enter DOB"
+        },
+        {
+            "questionId": "4",
+            "label": "Age",
+            "inputType": "text",
+            "placeHolderData": "Enter Age"
+        }
+    ],
+    "section3": [
+        {
+            "questionId": "5",
+            "label": "Email ID",
+            "inputType": "email",
+            "placeHolderData": "Enter email address"
+        },
+        {
+            "questionId": "6",
+            "label": "Phone No",
+            "inputType": "email",
+            "placeHolderData": "Enter Phone No"
+        }
+    ]
+}
