@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import checkData from "../../Utils/checkData";
 
 const TextField = (props: any) => {
-    const { labelData, placeholderData, typeData, labelStyles, textFieldCustomStyles, textFieldValue } = props;
+    const { labelData, placeholderData, typeData, labelStyles, textFieldCustomStyles, textFieldValue ,nameData} = props;
 
     const [currentValue, setCurrentValue] = useState('');
 
@@ -27,6 +27,7 @@ const TextField = (props: any) => {
                     // value is used with controlled form components. 
                     // They should not be used together in a form element.
                     onKeyPress={(e: any) => checkData(e, currentValue)}
+                    name={nameData}
                     required
                 />
             </div>

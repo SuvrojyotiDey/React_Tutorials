@@ -1,16 +1,18 @@
-{"inputData":[
-    {
-        "id":"loginPageUserName",
-        "label": "User Name",
-        "inline": "Enter the User name",
-        "type":"text"
-    },
-    {
-        "id":"loginPagePassword",
-        "label": "Password",
-        "inline": "Enter the Password",
-        "type":"password"
-    }
-]
+{
+    "inputData": [
+        {
+            "id": "loginPageUserName",
+            "label": "User Name",
+            "inline": "Enter the User name",
+            "name": "userName",
+            "type": "text"
+        },
+        {
+            "id": "loginPagePassword",
+            "label": "Password",
+            "inline": "Enter the Password",
+            "name": "userPassword",
+            "type": "password"
+        }
+    ]
 }
-
