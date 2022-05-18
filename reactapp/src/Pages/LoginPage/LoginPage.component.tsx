@@ -38,11 +38,11 @@ const LoginPage = () => {
                 () => handlingNavigation("/newPage", navigate),
                 3000
             );
-            toast.success("Login successful", { position: "top-center", autoClose: 2000 });
+            toast.success("Login successful", { position: "top-center", autoClose: 2000,hideProgressBar: true });
         }
         else if (userNameData !== "" && passwordData !== "") {
             setErrorMessage("Wrong Username and Password");
-            toast.error("Wrong Username and Password", { position: "top-center", autoClose: 2000 });
+            toast.error("Wrong Username and Password", { position: "top-center", autoClose: 2000,hideProgressBar: true});
         }
 
     }
@@ -81,7 +81,7 @@ const LoginPage = () => {
     return (
         <>
             <div className={styles.mainContainer}>
-                <ToastContainer />
+                <ToastContainer/>
                 <div className={styles.leftContainer}>
                     <img src={loginBackground} className={styles.image} alt="" />
                 </div>
