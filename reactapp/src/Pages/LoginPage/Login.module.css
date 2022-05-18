@@ -69,26 +69,36 @@
     color: red;
 }
 
-.buttonField {
+.buttonFieldPrimary {
     width: 100px;
     height: 40px;
     font-size: 18px;
-    color: #808080;
-    background: none;
     outline: none;
-    border: 1px solid #808080;
     outline: none;
     cursor: pointer;
     border-radius: 4px;
     margin-top: 20px;
     margin-right: 20px;
+    border: 2px solid #4f52ff;
+    color: #ffffff;
+    background-color: #4f52ff;
 }
 
-.buttonField:hover {
-    border: 2px solid #414141;
-    color: #ffffff;
-    background-color: #414141;
+.buttonFieldSecondary {
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    outline: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-right: 20px;
+    border: 2px solid #4f52ff;
+    color: #4f52ff;
+    background-color: #ffffff;
 }
+
 
 .buttonContainer {
     display: flex;
