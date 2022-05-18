@@ -2,17 +2,26 @@ import React, { useState } from "react";
 import checkData from "../../Utils/checkData";
 
 const TextField = (props: any) => {
-    const { labelData, placeholderData, typeData, labelStyles, textFieldCustomStyles, textFieldValue ,nameData} = props;
+    const { labelStyles, textFieldCustomStyles, textFieldValue, textFieldData } = props;
 
     const [currentValue, setCurrentValue] = useState('');
+
+    const customValidty = (e: any) => {
+        if (textFieldData.id === "loginPageUserName") {
+            e.target.setCustomValidity("Please Enter the username");
+        }
+        else if (textFieldData.id === "loginPagePassword") {
+            e.target.setCustomValidity("Please Enter the password");
+        }
+    }
 
     return (
         <>
             <div>
-                <div className={labelStyles}>{labelData}</div>
+                <div className={labelStyles}>{textFieldData.label}</div>
                 <input
-                    placeholder={placeholderData}
-                    type={typeData}
+                    placeholder={textFieldData.inline}
+                    type={textFieldData.type}
                     className={textFieldCustomStyles}
                     onChange={
                         (e: any) => {
@@ -22,12 +31,14 @@ const TextField = (props: any) => {
                             // currentTarget means element that has the event listener.     
                         }
                     }
-                    defaultValue={textFieldValue}
-                    // In React, defaultValue is used with uncontrolled form components whereas 
-                    // value is used with controlled form components. 
-                    // They should not be used together in a form element.
-                    onKeyPress={(e: any) => checkData(e, currentValue)}
-                    name={nameData}
+                    onKeyPress={
+                        (e: any) => checkData(e, currentValue)
+                    }
+                    name={textFieldData.name}
+                    onInvalid={customValidty}
+                    onInput={
+                        (e: any) => e.target.setCustomValidity('')
+                    }
                     required
                 />
             </div>
