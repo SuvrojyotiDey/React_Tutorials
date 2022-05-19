@@ -5,7 +5,6 @@ const NewPage=()=>{
     return (
     <>
         <Navbar/>
-        <div>This is new Page</div>
     </>
     );
 };
