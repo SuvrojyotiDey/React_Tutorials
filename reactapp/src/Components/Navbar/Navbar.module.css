@@ -1,0 +1,25 @@
+.navbarContainer{
+    height:70px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom:4px solid #7dcbdc;
+    margin:0px 10px;
+}
+.leftContainer,.rightContainer{
+    display: flex;
+    align-items: center;
+}
+.leftContainer{
+    margin-left: 40px;
+}
+.rightContainer{
+    margin-right:40px;
+}
+.menu ,.home ,.user {
+    height:40px;
+    width:40px;
+    cursor: pointer;
+}
+.user {
+    margin-right: 20px;
+}
