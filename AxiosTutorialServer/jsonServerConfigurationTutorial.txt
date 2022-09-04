@@ -1,0 +1,10 @@
+Steps to install json server :
+1) npm i json-server (it adds json server as a dependency the npx code doesn't) 
+2) creating db.json file so that we can put items into it
+3) to start the server : npx json-server -p 3500 -w data/db.json (this directly starts the server)
+    3.1) -p = port
+    3.2) -w = watch
+4) if we did step 1 then under package.json we need to change the start ( we can then run by using npm start)
+   "scripts": {
+    "start": "json-server -p 3006 -w db.json"
+  },
