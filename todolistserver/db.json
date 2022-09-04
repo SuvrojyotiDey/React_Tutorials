@@ -1,0 +1,24 @@
+{
+  "lists": [
+    {
+      "id": "1",
+      "name": "nick1",
+      "email": "nick@gmail.com"
+    },
+    {
+      "id": "2",
+      "name": "rick1",
+      "email": "rick@gmail.com"
+    },
+    {
+      "id": "3",
+      "name": "pick",
+      "email": "pick@gmail.com"
+    },
+    {
+      "id": "4",
+      "name": "lick",
+      "email": "lick@gmail.com"
+    }
+  ]
+}
