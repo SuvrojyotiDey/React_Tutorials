@@ -1,0 +1,60 @@
+1) Why Hooks ?
+   It is an alternative for writing class based components that uses state and lifecycle methods.
+   Hooks are used only with functional based components.
+
+2) Rules of hooks?
+   i) Only call hooks at the top level (useState & useEffect)
+      Don’t call Hooks inside loops, conditions, or nested functions. 
+      Instead, always use Hooks at the top level of your React function, before any early returns. 
+      By following this rule, you ensure that Hooks are called in the same order each time a component renders.
+      That’s what allows React to correctly preserve the state of Hooks between multiple useState and useEffect calls.
+    
+   ii) Only Call Hooks From React Components
+      Don’t call Hooks from regular JavaScript functions. 
+      Instead, you can call Hooks from React function components.
+      Call hooks from custom hooks.
+
+3) Referential Equality (important for callBack and useMemo)
+   Referential equality is true for primitive types.
+   7===7       true
+   '7'==='7'   true
+   a=true
+   b=true
+   a===b       true
+   {}==={}     false
+   []===[]     false
+
+   useCallback returns a memoized function i.e the function definition. 
+   If both the variable stores the same definition it will still be treated as different as it is
+   rendered again. 
+   In React, state variables are used to render the component state on the browser.
+   When the state changes, React re-renders the component with the new data. 
+   It helps keep the user informed of all changes occurring in the application.
+   Two values are considered equal when both are objects that point to the exact memory location.
+
+4) Why is useEffect called twice ?
+   Strict Mode will render your components twice in dev, which means your useEffect will be called twice.
+
+5) Three types of useEffect ?
+   i. No dependency passed:
+      useEffect(() => {
+      //Runs on every render
+      });
+   ii. An empty array:
+      useEffect(() => {
+      //Runs only on the first render
+      }, []);
+   iii. Props or state values:
+      useEffect(() => {
+      //Runs on the first render
+      //And any time any dependency value changes
+      }, [prop, state]);
+
+6) What is render in React js In React? 
+   render() method is called every time React notices changes in component’s (or its parent’s) state or props. 
+   It gives React the most up-to-date information to update virtual DOM. In other words, update its image of what the component needs to look like.
+
+7) Props vs state
+   In a React component, props are variables passed to it by its parent component. 
+   State on the other hand is still variables, but directly initialized and managed by the component. 
+   The state can be initialized by props.
