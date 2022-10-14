@@ -26,7 +26,7 @@ const HookUseMemo = () => {
   
   /** Here every time the state changes due to random input the component is rendered again and the function fib is called.
    * This will slow down overall behavior of the component.
-   * The above useEffect will show no effect cause it know that series is not changed
+   * The above useEffect will show no effect cause it knows that series is not changed
    */
 
   return (
